@@ -1,0 +1,13 @@
+.form {
+  @apply flex flex-col;
+  .form-group{
+    .form-label {
+      @apply py-2 font-medium text-lg;
+    }
+    .form-input {
+      @apply w-full py-2 px-4 rounded-xl border ;
+    }
+  }
+
+
+}

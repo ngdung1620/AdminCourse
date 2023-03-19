@@ -1,0 +1,24 @@
+<mat-dialog-content>
+  <form class="form" [formGroup]="dataForm">
+    <div class="form-group">
+      <h1 class="form-label">Tên bài học</h1>
+      <input type="text" formControlName="title" name="" class="form-input">
+    </div>
+    <div class="form-group">
+      <h1 class="form-label">Mô tả</h1>
+      <input type="text" formControlName="description" name="" class="form-input">
+    </div>
+    <div class="form-group">
+      <h1 class="form-label">Video</h1>
+      <input type="text" formControlName="video" name="" class="form-input">
+    </div>
+    <h1 class="title-course">Danh sách các khóa học</h1>
+    <select formControlName="courseId" class="select">
+      <option *ngFor="let course of listCourse" [value]="course.id">{{course.title}}</option>
+    </select>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-raised-button mat-dialog-close color="warn" >Hủy</button>
+  <button mat-raised-button color="primary" (click)="handleSubmit()">{{title}}</button>
+</mat-dialog-actions>

@@ -1,0 +1,36 @@
+<div class="content">
+  <h1 class="title">Quản lí khóa học</h1>
+  <div class="head-content">
+   <div class="group-search">
+     <input type="text" class="search" placeholder="Search" [(ngModel)]="search">
+     <button class="btn-search" (click)="handleSearch()">Tìm kiếm</button>
+   </div>
+    <button class="btn" (click)="handleAdd()" >Thêm khóa học</button>
+  </div>
+  <table>
+    <thead>
+    <tr class="table-heading">
+      <th>Tên khóa học</th>
+      <th width="160">Trạng thái</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let course of listCourse">
+      <td>{{course.title}}</td>
+      <td>
+        <button mat-raised-button color="accent" class="edit" (click)="handleEdit(course)">Sửa</button>
+        <button mat-raised-button color="warn" (click)="handleClick(course.id)">Xóa</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <mat-paginator [length]="length"
+                 [pageSize]="pageSize"
+                 [pageSizeOptions]="pageSizeOptions"
+                 [pageIndex] = "pageIndex"
+                 showFirstLastButtons
+                 (page) = "change($event)"
+  >
+  </mat-paginator>
+
+</div>

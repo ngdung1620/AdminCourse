@@ -1,0 +1,39 @@
+<div class="content">
+  <h1 class="title">Quản lí người dùng</h1>
+  <div class="head-content">
+    <div class="group-search">
+      <input type="text" class="search" placeholder="Search" [(ngModel)]="search">
+      <button class="btn-search" (click)="handleSearch()">Tìm kiếm</button>
+    </div>
+    <button class="btn" (click)="openDialog()">Thêm người dùng</button>
+  </div>
+  <table>
+    <thead>
+      <tr class="table-heading">
+        <th>Họ và tên</th>
+        <th>Email</th>
+        <th>Số điện thoại</th>
+        <th width="160">Trạng thái</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of listUser">
+        <td>{{user.fullName}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.phoneNumber}}</td>
+        <td>
+          <button mat-raised-button color="accent" class="edit">Sửa</button>
+          <button mat-raised-button color="warn" (click)="handleDelete(user.id)">Xóa</button>
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+  <mat-paginator [length]="length"
+                 [pageSize]="pageSize"
+                 [pageSizeOptions]="pageSizeOptions"
+                 showFirstLastButtons
+                 (page) = "change($event)"
+  >
+  </mat-paginator>
+</div>

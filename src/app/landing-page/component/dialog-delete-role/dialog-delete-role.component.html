@@ -1,0 +1,11 @@
+<mat-dialog-content>
+  <form action="" [formGroup]="dataForm">
+    <select formControlName="id" class="select">
+      <option *ngFor="let role of listRole" [value]="role.id" class="option">{{role.name}}</option>
+    </select>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-raised-button mat-dialog-close color="warn" >Hủy</button>
+  <button mat-raised-button color="primary" (click)="handleSubmit()">Xóa Nhóm quyền</button>
+</mat-dialog-actions>

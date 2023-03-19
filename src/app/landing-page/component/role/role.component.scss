@@ -1,0 +1,46 @@
+.content {
+  @apply flex;
+  .group-permission {
+    @apply w-1/5  text-gray-600 border-r-2;
+    .title {
+      @apply text-xl border-b mb-8 pb-2;
+    }
+    .per-item {
+      @apply py-2 mt-2 rounded transition-all px-3 cursor-pointer;
+      &:hover {
+        @apply bg-orange-200;
+      }
+    }
+    .active {
+      @apply bg-orange-200;
+    }
+  }
+  .list-claim {
+    @apply  w-4/5 ;
+   .head {
+     @apply flex justify-between mb-8 mx-4 items-center;
+     .group-btn {
+       .add-per {
+         @apply mr-2
+       }
+       .delete-per{
+
+       }
+     }
+     .save {
+       @apply text-right;
+       .save-icon {
+         @apply text-xl mr-2 cursor-pointer
+       }
+       .save-title {
+         @apply text-lg
+       }
+     }
+   }
+    .group-claim {
+      .claim {
+        @apply flex justify-between mb-4
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+<mat-dialog-content>
+  <form class="form" [formGroup]="dataForm">
+    <div class="form-group">
+      <h1 class="form-label">Họ và tên</h1>
+      <input type="text" formControlName="fullName" name="" class="form-input">
+    </div>
+    <div class="form-group">
+      <h1 class="form-label">Email</h1>
+      <input type="email" name="" class="form-input" formControlName="email">
+    </div>
+    <div class="form-group">
+      <h1 class="form-label">Số Điện thoại</h1>
+      <input type="text" name="" class="form-input" formControlName="phoneNumber">
+    </div>
+    <div class="form-group">
+      <h1 class="form-label">Tên đăng nhập</h1>
+      <input type="text" name="" class="form-input" formControlName="userName">
+    </div>
+    <div class="form-group">
+      <h1 class="form-label">Mật khẩu</h1>
+      <input type="password" name="" class="form-input" formControlName="password">
+    </div>
+    <div class="form-group">
+      <h1 class="form-label"> Nhập lại mật khẩu</h1>
+      <input type="password" name="" class="form-input" formControlName="confirmPassword">
+    </div>
+    <h1 class="title-course">Danh sách các quyền</h1>
+    <div *ngFor="let role of listRole ; let i=index" class="checkbox-group">
+      {{role.name}}
+      <input type="checkbox"  class="checkbox" formArrayName="roles" [value]="role.name" (change)="onCheckboxChange($event)"
+      />
+    </div>
+  </form>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-raised-button mat-dialog-close color="warn" >Hủy</button>
+  <button mat-raised-button color="primary" (click)="handleSubmit()">Đăng kí</button>
+</mat-dialog-actions>
